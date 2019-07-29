@@ -1,5 +1,6 @@
 package TESTS;
 
+import Base.TestBase;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,15 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class calculationTests {
-    WebDriver driver;
+public class calculationTests extends TestBase {
 
-    @Before /*anotacia*/
-    public void setUp() {  /*metoda*/
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://localhost/ta-mentor-program-playground-master/savingscalculator.php");
-    }
+
 
     @Test
     public void itShouldCalculateTotalIncome() {
@@ -129,9 +124,5 @@ public void iTShlouldCalculateTotalIncomeForEachFund (){
 
 
 
-    @After
-    public void tearDown() {
-          driver.close();
-         driver.quit();
-    }
+
 }

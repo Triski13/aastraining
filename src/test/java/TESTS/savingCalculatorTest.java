@@ -1,5 +1,6 @@
 package TESTS;
 
+import Base.TestBase;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,16 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class savingCalculatorTest {    /* trieda*/
+public class savingCalculatorTest extends TestBase {    /* trieda*/
 
-    WebDriver driver;
 
-    @Before /*anotacia*/
-    public void setUp() {  /*metoda*/
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://localhost/ta-mentor-program-playground-master/savingscalculator.php");
-    }
     @Test
     public void itShouldDisplayTitle() {
         Assert.assertEquals("Savings Calculator", driver.findElement(By.cssSelector("h1")).getText());
@@ -51,9 +45,5 @@ public class savingCalculatorTest {    /* trieda*/
         Assert.assertEquals("Select your fund",new Select(driver.findElement(By.id("fundSelect"))).getFirstSelectedOption().getText());
     }
 
-    @After
-    public void tearDown() {
-//            driver.close();
-//            driver.quit();
-    }
+
 }
