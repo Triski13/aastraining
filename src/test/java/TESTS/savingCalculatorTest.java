@@ -18,21 +18,16 @@ public class savingCalculatorTest {    /* trieda*/
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://localhost/ta-mentor-program-playground-master/savingscalculator.php");
-
-
     }
-
     @Test
     public void itShouldDisplayTitle() {
         Assert.assertEquals("Savings Calculator", driver.findElement(By.cssSelector("h1")).getText());
     }
-
     @Test
     public void itShouldDisableApplyButtonOnPageOpen() {
         driver.findElement(By.cssSelector("button.btn-block")).isEnabled();
         Assert.assertFalse(driver.findElement(By.cssSelector("button.btn-block")).isEnabled());
     }
-
     @Test
     public void itShouldEnableApplyButton() {
         //1. vybrat fond
@@ -47,6 +42,13 @@ public class savingCalculatorTest {    /* trieda*/
         driver.findElement(By.id("emailInput")).sendKeys("peter.pis@aas-slovakia.sk");
         //5. overit buton
         Assert.assertTrue(driver.findElement(By.cssSelector("button.btn-block")).isEnabled());
+    }
+
+    @Test
+    public void itShouldNotSelecetAnyFundOnPage() {
+        new Select(driver.findElement(By.id("fundSelect"))).getFirstSelectedOption().getText();
+        System.out.println(new Select(driver.findElement(By.id("fundSelect"))).getFirstSelectedOption().getText());
+        Assert.assertEquals("Select your fund",new Select(driver.findElement(By.id("fundSelect"))).getFirstSelectedOption().getText());
     }
 
     @After
