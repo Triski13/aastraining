@@ -1,8 +1,7 @@
-package Base;
+package base;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.runners.Suite;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

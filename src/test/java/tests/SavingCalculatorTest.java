@@ -1,16 +1,12 @@
-package TESTS;
+package tests;
 
-import Base.TestBase;
-import org.junit.After;
+import base.TestBase;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class savingCalculatorTest extends TestBase {    /* trieda*/
+public class SavingCalculatorTest extends TestBase {    /* trieda*/
 
 
     @Test
