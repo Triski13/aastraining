@@ -4,6 +4,7 @@ import base.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import pages.CalculatorPage;
 import utils.MathUtils;
 
@@ -67,7 +68,7 @@ public class NewSavingRequestTest extends TestBase {
         CalculatorPage calculatorPage = new CalculatorPage(driver);
         //for cyklus - napises fori + tab
         for (int i = 0; i < 20 ; i++) {
-        calculatorPage.selectFund("Death Star real estate");
+            calculatorPage.enterRandomFund();
         calculatorPage.enterInvestments(String.valueOf(MathUtils.getRandomNumberInRange(100,1000)));
         calculatorPage.enterYears(String.valueOf(MathUtils.getRandomNumberInRange(5,35)));
         calculatorPage.enterEmail("peter.pis@aas-slovakia.sk");
@@ -79,4 +80,6 @@ public class NewSavingRequestTest extends TestBase {
         Assert.assertEquals(20, driver.findElements(By.cssSelector("ul.saving-list > li >div.saving-detail")).size());
         System.out.println("UZ SOM SKONCIL");
     }
+
+
 }
