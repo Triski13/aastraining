@@ -11,8 +11,7 @@ public class SavingCalculatorTest extends TestBase {    /* trieda*/
 
 
     @Test
-    public void itShouldDisplayTitle() {CalculatorPage calculatorPage = new CalculatorPage(driver);
-        calculatorPage.selectFund("Hoggwart's Fund");
+    public void itShouldDisplayTitle() {
         Assert.assertEquals("Savings Calculator", driver.findElement(By.cssSelector("h1")).getText());
     }
     @Test
