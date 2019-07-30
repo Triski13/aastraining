@@ -3,6 +3,7 @@ package pages;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -45,9 +46,12 @@ public class CalculatorPage {
         pageDriver.findElement(By.cssSelector("button.btn-block")).click();
     }
 
-    public void enterEmail(String yearsToEnter) {
+    public void enterEmail(String emailToEnter) {
         pageDriver.findElement(By.id("emailInput")).clear();
-        pageDriver.findElement(By.id("emailInput")).sendKeys("peter.pis@aas-slovakia.sk");
+        pageDriver.findElement(By.id("emailInput")).sendKeys(emailToEnter);
+                pageDriver.findElement(By.id("emailInput")).sendKeys(Keys.TAB);
+
+
 
     }
 
