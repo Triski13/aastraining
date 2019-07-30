@@ -91,8 +91,8 @@ public void iTShlouldCalculateTotalIncomeForEachFund (){
     for (String arayOfFund : arayOfFunds) {
         CalculatorPage calculatorPage = new CalculatorPage(driver);
         calculatorPage.selectFund("Death Star real estate");
-        calculatorPage.enterInvestments( "20");
-        calculatorPage.enterYears("20");
+        calculatorPage.enterInvestments( "15000");
+        calculatorPage.enterYears("35");
         calculatorPage.enterEmail("peter.pis@aas-slovakia.sk");
         Assert.assertFalse(calculatorPage.getTotalIncome().isEmpty());
         Assert.assertTrue(calculatorPage.getTotalIncome().contains("kr"));

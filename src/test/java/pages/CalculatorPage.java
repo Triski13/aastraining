@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
@@ -34,15 +35,25 @@ public class CalculatorPage {
 
     public void enterInvestments(String amountToEnter) {
         pageDriver.findElement(By.id("oneTimeInvestmentInput")).clear();
-        pageDriver.findElement(By.id("oneTimeInvestmentInput")).sendKeys("20");
+        pageDriver.findElement(By.id("oneTimeInvestmentInput")).sendKeys(amountToEnter);
     }
     public void enterYears(String yearsToEnter) {
         pageDriver.findElement(By.id("yearsInput")).clear();
-        pageDriver.findElement(By.id("yearsInput")).sendKeys("35");
+        pageDriver.findElement(By.id("yearsInput")).sendKeys(yearsToEnter);
     }
+
+
+          public void submitRequest(){
+            pageDriver.findElement(By.cssSelector("button.btn-block")).click();
+        }
+
+
+
+
     public void enterEmail(String yearsToEnter) {
         pageDriver.findElement(By.id("emailInput")).clear();
         pageDriver.findElement(By.id("emailInput")).sendKeys("peter.pis@aas-slovakia.sk");
+
     }
 
 
